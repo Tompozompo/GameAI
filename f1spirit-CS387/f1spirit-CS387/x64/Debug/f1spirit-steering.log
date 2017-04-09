@@ -1,0 +1,346 @@
+﻿Build started 4/6/2017 11:58:52 AM.
+     1>Project "D:\Users\Tom\Documents\GitHub\GameAI\f1spirit-CS387\f1spirit-CS387\f1spirit-steering.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\CL.exe /c /Iinclude /ZI /nologo /W1 /WX- /Od /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TP /errorReport:prompt sources\2DCMC.cpp sources\AIDebug.cpp sources\auxiliar.cpp sources\CarEngineSound.cpp sources\CCar.cpp sources\CPlayer.cpp sources\debug.cpp sources\EnemyCCar.cpp sources\EnemyCCarAI.cpp sources\F1SComputer.cpp "sources\F1Spirit-auxiliar.cpp" sources\F1SpiritApp.cpp sources\F1SpiritGame.cpp sources\F1SpiritTrackViewer.cpp sources\filehandling.cpp sources\GameParameters.cpp sources\geometrics.cpp "sources\GLtile-f1.cpp" sources\GLTile.cpp sources\keyboardstate.cpp sources\main.cpp sources\PlacedGLTile.cpp sources\PlayerCCar.cpp sources\PlayerCCarAI.cpp sources\RacingCCar.cpp sources\ranrotb.cpp sources\ReplayInfo.cpp sources\RoadPiece.cpp sources\RotatedGLTile.cpp sources\SDL_glutaux.cpp sources\sound.cpp sources\state_disclaimer.cpp sources\state_endsequence.cpp sources\state_gameoptions.cpp sources\state_gamestart.cpp sources\state_hiscore.cpp sources\state_konami.cpp sources\state_menu.cpp sources\state_menu_create_menu.cpp sources\state_menu_draw.cpp sources\state_race.cpp sources\state_race_result.cpp sources\state_replaymanager.cpp sources\state_title.cpp sources\state_trackload.cpp sources\track.cpp sources\Vector.cpp sources\weather.cpp
+         weather.cpp
+         Vector.cpp
+         track.cpp
+         state_trackload.cpp
+         state_title.cpp
+         state_replaymanager.cpp
+         state_race_result.cpp
+         state_race.cpp
+         state_menu_draw.cpp
+         state_menu_create_menu.cpp
+         state_menu.cpp
+         state_konami.cpp
+         state_hiscore.cpp
+         state_gamestart.cpp
+         state_gameoptions.cpp
+         state_endsequence.cpp
+         state_disclaimer.cpp
+         sound.cpp
+         SDL_glutaux.cpp
+         RotatedGLTile.cpp
+         Generating Code...
+         Compiling...
+         RoadPiece.cpp
+         ReplayInfo.cpp
+         ranrotb.cpp
+         RacingCCar.cpp
+         PlayerCCarAI.cpp
+         PlayerCCar.cpp
+         PlacedGLTile.cpp
+         main.cpp
+         keyboardstate.cpp
+         GLTile.cpp
+         GLtile-f1.cpp
+         geometrics.cpp
+         GameParameters.cpp
+     1>d:\users\tom\documents\github\gameai\f1spirit-cs387\f1spirit-cs387\sources\gameparameters.cpp(71): warning C4838: conversion from 'double' to 'float' requires a narrowing conversion
+     1>d:\users\tom\documents\github\gameai\f1spirit-cs387\f1spirit-cs387\sources\gameparameters.cpp(80): warning C4838: conversion from 'double' to 'float' requires a narrowing conversion
+         filehandling.cpp
+         F1SpiritTrackViewer.cpp
+         F1SpiritGame.cpp
+         F1SpiritApp.cpp
+         F1Spirit-auxiliar.cpp
+         F1SComputer.cpp
+         EnemyCCarAI.cpp
+         Generating Code...
+         Compiling...
+         EnemyCCar.cpp
+         debug.cpp
+         CPlayer.cpp
+         CCar.cpp
+         CarEngineSound.cpp
+         auxiliar.cpp
+         AIDebug.cpp
+         2DCMC.cpp
+         Generating Code...
+       Link:
+         D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Users\Tom\Documents\GitHub\GameAI\f1spirit-CS387\f1spirit-CS387\x64\Debug\f1spirit-steering.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK /PDB:"D:\Users\Tom\Documents\GitHub\GameAI\f1spirit-CS387\f1spirit-CS387\x64\Debug\f1spirit-steering.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Users\Tom\Documents\GitHub\GameAI\f1spirit-CS387\f1spirit-CS387\x64\Debug\f1spirit-steering.lib" /MACHINE:X64 x64\Debug\2DCMC.obj
+         x64\Debug\AIDebug.obj
+         x64\Debug\auxiliar.obj
+         x64\Debug\CarEngineSound.obj
+         x64\Debug\CCar.obj
+         x64\Debug\CPlayer.obj
+         x64\Debug\debug.obj
+         x64\Debug\EnemyCCar.obj
+         x64\Debug\EnemyCCarAI.obj
+         x64\Debug\F1SComputer.obj
+         "x64\Debug\F1Spirit-auxiliar.obj"
+         x64\Debug\F1SpiritApp.obj
+         x64\Debug\F1SpiritGame.obj
+         x64\Debug\F1SpiritTrackViewer.obj
+         x64\Debug\filehandling.obj
+         x64\Debug\GameParameters.obj
+         x64\Debug\geometrics.obj
+         "x64\Debug\GLtile-f1.obj"
+         x64\Debug\GLTile.obj
+         x64\Debug\keyboardstate.obj
+         x64\Debug\main.obj
+         x64\Debug\PlacedGLTile.obj
+         x64\Debug\PlayerCCar.obj
+         x64\Debug\PlayerCCarAI.obj
+         x64\Debug\RacingCCar.obj
+         x64\Debug\ranrotb.obj
+         x64\Debug\ReplayInfo.obj
+         x64\Debug\RoadPiece.obj
+         x64\Debug\RotatedGLTile.obj
+         x64\Debug\SDL_glutaux.obj
+         x64\Debug\sound.obj
+         x64\Debug\state_disclaimer.obj
+         x64\Debug\state_endsequence.obj
+         x64\Debug\state_gameoptions.obj
+         x64\Debug\state_gamestart.obj
+         x64\Debug\state_hiscore.obj
+         x64\Debug\state_konami.obj
+         x64\Debug\state_menu.obj
+         x64\Debug\state_menu_create_menu.obj
+         x64\Debug\state_menu_draw.obj
+         x64\Debug\state_race.obj
+         x64\Debug\state_race_result.obj
+         x64\Debug\state_replaymanager.obj
+         x64\Debug\state_title.obj
+         x64\Debug\state_trackload.obj
+         x64\Debug\track.obj
+         x64\Debug\Vector.obj
+         x64\Debug\weather.obj
+         libs\glut.lib
+         libs\glut32.lib
+         libs\SDL.lib
+         libs\SDLmain.lib
+         libs\SDL_image.lib
+         libs\SDL_mixer.lib
+         libs\SDL_net.lib
+     1>weather.obj : error LNK2001: unresolved external symbol __imp_glBegin
+     1>state_race_result.obj : error LNK2001: unresolved external symbol __imp_glBegin
+     1>state_replaymanager.obj : error LNK2001: unresolved external symbol __imp_glBegin
+     1>state_title.obj : error LNK2001: unresolved external symbol __imp_glBegin
+     1>track.obj : error LNK2001: unresolved external symbol __imp_glBegin
+     1>state_gameoptions.obj : error LNK2001: unresolved external symbol __imp_glBegin
+     1>state_gamestart.obj : error LNK2001: unresolved external symbol __imp_glBegin
+     1>state_hiscore.obj : error LNK2001: unresolved external symbol __imp_glBegin
+     1>state_menu_draw.obj : error LNK2001: unresolved external symbol __imp_glBegin
+     1>GLTile.obj : error LNK2001: unresolved external symbol __imp_glBegin
+     1>RoadPiece.obj : error LNK2001: unresolved external symbol __imp_glBegin
+     1>SDL_glutaux.obj : error LNK2001: unresolved external symbol __imp_glBegin
+     1>state_endsequence.obj : error LNK2001: unresolved external symbol __imp_glBegin
+     1>2DCMC.obj : error LNK2001: unresolved external symbol __imp_glBegin
+     1>AIDebug.obj : error LNK2001: unresolved external symbol __imp_glBegin
+     1>F1SpiritGame.obj : error LNK2001: unresolved external symbol __imp_glBegin
+     1>GLtile-f1.obj : error LNK2001: unresolved external symbol __imp_glBegin
+     1>state_replaymanager.obj : error LNK2001: unresolved external symbol __imp_glColor4f
+     1>state_title.obj : error LNK2001: unresolved external symbol __imp_glColor4f
+     1>track.obj : error LNK2001: unresolved external symbol __imp_glColor4f
+     1>weather.obj : error LNK2001: unresolved external symbol __imp_glColor4f
+     1>state_gamestart.obj : error LNK2001: unresolved external symbol __imp_glColor4f
+     1>state_hiscore.obj : error LNK2001: unresolved external symbol __imp_glColor4f
+     1>state_menu_draw.obj : error LNK2001: unresolved external symbol __imp_glColor4f
+     1>state_race_result.obj : error LNK2001: unresolved external symbol __imp_glColor4f
+     1>GLTile.obj : error LNK2001: unresolved external symbol __imp_glColor4f
+     1>RoadPiece.obj : error LNK2001: unresolved external symbol __imp_glColor4f
+     1>state_endsequence.obj : error LNK2001: unresolved external symbol __imp_glColor4f
+     1>state_gameoptions.obj : error LNK2001: unresolved external symbol __imp_glColor4f
+     1>2DCMC.obj : error LNK2001: unresolved external symbol __imp_glColor4f
+     1>AIDebug.obj : error LNK2001: unresolved external symbol __imp_glColor4f
+     1>F1SpiritGame.obj : error LNK2001: unresolved external symbol __imp_glColor4f
+     1>GLtile-f1.obj : error LNK2001: unresolved external symbol __imp_glColor4f
+     1>weather.obj : error LNK2001: unresolved external symbol __imp_glEnd
+     1>state_race_result.obj : error LNK2001: unresolved external symbol __imp_glEnd
+     1>state_replaymanager.obj : error LNK2001: unresolved external symbol __imp_glEnd
+     1>state_title.obj : error LNK2001: unresolved external symbol __imp_glEnd
+     1>track.obj : error LNK2001: unresolved external symbol __imp_glEnd
+     1>state_gameoptions.obj : error LNK2001: unresolved external symbol __imp_glEnd
+     1>state_gamestart.obj : error LNK2001: unresolved external symbol __imp_glEnd
+     1>state_hiscore.obj : error LNK2001: unresolved external symbol __imp_glEnd
+     1>state_menu_draw.obj : error LNK2001: unresolved external symbol __imp_glEnd
+     1>GLTile.obj : error LNK2001: unresolved external symbol __imp_glEnd
+     1>RoadPiece.obj : error LNK2001: unresolved external symbol __imp_glEnd
+     1>SDL_glutaux.obj : error LNK2001: unresolved external symbol __imp_glEnd
+     1>state_endsequence.obj : error LNK2001: unresolved external symbol __imp_glEnd
+     1>2DCMC.obj : error LNK2001: unresolved external symbol __imp_glEnd
+     1>AIDebug.obj : error LNK2001: unresolved external symbol __imp_glEnd
+     1>F1SpiritGame.obj : error LNK2001: unresolved external symbol __imp_glEnd
+     1>GLtile-f1.obj : error LNK2001: unresolved external symbol __imp_glEnd
+     1>weather.obj : error LNK2001: unresolved external symbol __imp_glVertex3f
+     1>state_race_result.obj : error LNK2001: unresolved external symbol __imp_glVertex3f
+     1>state_replaymanager.obj : error LNK2001: unresolved external symbol __imp_glVertex3f
+     1>state_title.obj : error LNK2001: unresolved external symbol __imp_glVertex3f
+     1>track.obj : error LNK2001: unresolved external symbol __imp_glVertex3f
+     1>state_gameoptions.obj : error LNK2001: unresolved external symbol __imp_glVertex3f
+     1>state_gamestart.obj : error LNK2001: unresolved external symbol __imp_glVertex3f
+     1>state_hiscore.obj : error LNK2001: unresolved external symbol __imp_glVertex3f
+     1>state_menu_draw.obj : error LNK2001: unresolved external symbol __imp_glVertex3f
+     1>GLTile.obj : error LNK2001: unresolved external symbol __imp_glVertex3f
+     1>RoadPiece.obj : error LNK2001: unresolved external symbol __imp_glVertex3f
+     1>SDL_glutaux.obj : error LNK2001: unresolved external symbol __imp_glVertex3f
+     1>state_endsequence.obj : error LNK2001: unresolved external symbol __imp_glVertex3f
+     1>2DCMC.obj : error LNK2001: unresolved external symbol __imp_glVertex3f
+     1>AIDebug.obj : error LNK2001: unresolved external symbol __imp_glVertex3f
+     1>F1SpiritGame.obj : error LNK2001: unresolved external symbol __imp_glVertex3f
+     1>GLtile-f1.obj : error LNK2001: unresolved external symbol __imp_glVertex3f
+     1>track.obj : error LNK2001: unresolved external symbol __imp_glNormal3f
+     1>weather.obj : error LNK2001: unresolved external symbol __imp_glNormal3f
+     1>state_menu_draw.obj : error LNK2001: unresolved external symbol __imp_glNormal3f
+     1>state_race_result.obj : error LNK2001: unresolved external symbol __imp_glNormal3f
+     1>state_replaymanager.obj : error LNK2001: unresolved external symbol __imp_glNormal3f
+     1>state_title.obj : error LNK2001: unresolved external symbol __imp_glNormal3f
+     1>state_endsequence.obj : error LNK2001: unresolved external symbol __imp_glNormal3f
+     1>state_gameoptions.obj : error LNK2001: unresolved external symbol __imp_glNormal3f
+     1>state_gamestart.obj : error LNK2001: unresolved external symbol __imp_glNormal3f
+     1>state_hiscore.obj : error LNK2001: unresolved external symbol __imp_glNormal3f
+     1>AIDebug.obj : error LNK2001: unresolved external symbol __imp_glNormal3f
+     1>F1SpiritGame.obj : error LNK2001: unresolved external symbol __imp_glNormal3f
+     1>GLtile-f1.obj : error LNK2001: unresolved external symbol __imp_glNormal3f
+     1>GLTile.obj : error LNK2001: unresolved external symbol __imp_glNormal3f
+     1>state_konami.obj : error LNK2001: unresolved external symbol __imp_glPopMatrix
+     1>track.obj : error LNK2001: unresolved external symbol __imp_glPopMatrix
+     1>weather.obj : error LNK2001: unresolved external symbol __imp_glPopMatrix
+     1>GLTile.obj : error LNK2001: unresolved external symbol __imp_glPopMatrix
+     1>RoadPiece.obj : error LNK2001: unresolved external symbol __imp_glPopMatrix
+     1>RotatedGLTile.obj : error LNK2001: unresolved external symbol __imp_glPopMatrix
+     1>state_gamestart.obj : error LNK2001: unresolved external symbol __imp_glPopMatrix
+     1>AIDebug.obj : error LNK2001: unresolved external symbol __imp_glPopMatrix
+     1>F1SpiritGame.obj : error LNK2001: unresolved external symbol __imp_glPopMatrix
+     1>F1SpiritTrackViewer.obj : error LNK2001: unresolved external symbol __imp_glPopMatrix
+     1>GLtile-f1.obj : error LNK2001: unresolved external symbol __imp_glPopMatrix
+     1>state_konami.obj : error LNK2001: unresolved external symbol __imp_glPushMatrix
+     1>track.obj : error LNK2001: unresolved external symbol __imp_glPushMatrix
+     1>weather.obj : error LNK2001: unresolved external symbol __imp_glPushMatrix
+     1>GLTile.obj : error LNK2001: unresolved external symbol __imp_glPushMatrix
+     1>RoadPiece.obj : error LNK2001: unresolved external symbol __imp_glPushMatrix
+     1>RotatedGLTile.obj : error LNK2001: unresolved external symbol __imp_glPushMatrix
+     1>state_gamestart.obj : error LNK2001: unresolved external symbol __imp_glPushMatrix
+     1>AIDebug.obj : error LNK2001: unresolved external symbol __imp_glPushMatrix
+     1>F1SpiritGame.obj : error LNK2001: unresolved external symbol __imp_glPushMatrix
+     1>F1SpiritTrackViewer.obj : error LNK2001: unresolved external symbol __imp_glPushMatrix
+     1>GLtile-f1.obj : error LNK2001: unresolved external symbol __imp_glPushMatrix
+     1>weather.obj : error LNK2001: unresolved external symbol __imp_glScalef
+     1>AIDebug.obj : error LNK2001: unresolved external symbol __imp_glScalef
+     1>GLTile.obj : error LNK2001: unresolved external symbol __imp_glScalef
+     1>state_gamestart.obj : error LNK2001: unresolved external symbol __imp_glScalef
+     1>track.obj : error LNK2001: unresolved external symbol __imp_glScalef
+     1>F1SpiritApp.obj : error LNK2019: unresolved external symbol __imp_glBlendFunc referenced in function "public: void __cdecl F1SpiritApp::draw(void)" (?draw@F1SpiritApp@@QEAAXXZ)
+     1>state_trackload.obj : error LNK2001: unresolved external symbol __imp_glClearColor
+     1>state_race.obj : error LNK2001: unresolved external symbol __imp_glClearColor
+     1>state_race_result.obj : error LNK2001: unresolved external symbol __imp_glClearColor
+     1>state_replaymanager.obj : error LNK2001: unresolved external symbol __imp_glClearColor
+     1>state_title.obj : error LNK2001: unresolved external symbol __imp_glClearColor
+     1>state_gamestart.obj : error LNK2001: unresolved external symbol __imp_glClearColor
+     1>state_hiscore.obj : error LNK2001: unresolved external symbol __imp_glClearColor
+     1>state_konami.obj : error LNK2001: unresolved external symbol __imp_glClearColor
+     1>state_menu_draw.obj : error LNK2001: unresolved external symbol __imp_glClearColor
+     1>F1SpiritApp.obj : error LNK2001: unresolved external symbol __imp_glClearColor
+     1>state_disclaimer.obj : error LNK2001: unresolved external symbol __imp_glClearColor
+     1>state_endsequence.obj : error LNK2001: unresolved external symbol __imp_glClearColor
+     1>state_gameoptions.obj : error LNK2001: unresolved external symbol __imp_glClearColor
+     1>RoadPiece.obj : error LNK2001: unresolved external symbol __imp_glDisable
+     1>state_menu_draw.obj : error LNK2001: unresolved external symbol __imp_glDisable
+     1>state_replaymanager.obj : error LNK2001: unresolved external symbol __imp_glDisable
+     1>weather.obj : error LNK2001: unresolved external symbol __imp_glDisable
+     1>F1SpiritApp.obj : error LNK2001: unresolved external symbol __imp_glDisable
+     1>F1SpiritGame.obj : error LNK2001: unresolved external symbol __imp_glDisable
+     1>GLtile-f1.obj : error LNK2001: unresolved external symbol __imp_glDisable
+     1>GLTile.obj : error LNK2001: unresolved external symbol __imp_glDisable
+     1>track.obj : error LNK2001: unresolved external symbol __imp_glEnable
+     1>weather.obj : error LNK2001: unresolved external symbol __imp_glEnable
+     1>state_menu_draw.obj : error LNK2001: unresolved external symbol __imp_glEnable
+     1>state_race_result.obj : error LNK2001: unresolved external symbol __imp_glEnable
+     1>state_replaymanager.obj : error LNK2001: unresolved external symbol __imp_glEnable
+     1>state_title.obj : error LNK2001: unresolved external symbol __imp_glEnable
+     1>RoadPiece.obj : error LNK2001: unresolved external symbol __imp_glEnable
+     1>state_endsequence.obj : error LNK2001: unresolved external symbol __imp_glEnable
+     1>state_gamestart.obj : error LNK2001: unresolved external symbol __imp_glEnable
+     1>state_hiscore.obj : error LNK2001: unresolved external symbol __imp_glEnable
+     1>F1SpiritApp.obj : error LNK2001: unresolved external symbol __imp_glEnable
+     1>F1SpiritGame.obj : error LNK2001: unresolved external symbol __imp_glEnable
+     1>GLtile-f1.obj : error LNK2001: unresolved external symbol __imp_glEnable
+     1>GLTile.obj : error LNK2001: unresolved external symbol __imp_glEnable
+     1>F1SpiritApp.obj : error LNK2019: unresolved external symbol __imp_glHint referenced in function "public: void __cdecl F1SpiritApp::draw(void)" (?draw@F1SpiritApp@@QEAAXXZ)
+     1>F1SpiritApp.obj : error LNK2019: unresolved external symbol __imp_glLightfv referenced in function "public: void __cdecl F1SpiritApp::draw(void)" (?draw@F1SpiritApp@@QEAAXXZ)
+     1>F1SpiritApp.obj : error LNK2019: unresolved external symbol __imp_glLoadIdentity referenced in function "public: void __cdecl F1SpiritApp::draw(void)" (?draw@F1SpiritApp@@QEAAXXZ)
+     1>F1SpiritApp.obj : error LNK2019: unresolved external symbol __imp_glMatrixMode referenced in function "public: void __cdecl F1SpiritApp::draw(void)" (?draw@F1SpiritApp@@QEAAXXZ)
+     1>F1SpiritApp.obj : error LNK2019: unresolved external symbol __imp_glPolygonMode referenced in function "public: void __cdecl F1SpiritApp::draw(void)" (?draw@F1SpiritApp@@QEAAXXZ)
+     1>F1SpiritApp.obj : error LNK2019: unresolved external symbol __imp_glShadeModel referenced in function "public: void __cdecl F1SpiritApp::draw(void)" (?draw@F1SpiritApp@@QEAAXXZ)
+     1>F1SpiritApp.obj : error LNK2019: unresolved external symbol __imp_glViewport referenced in function "public: void __cdecl F1SpiritApp::draw(void)" (?draw@F1SpiritApp@@QEAAXXZ)
+     1>state_menu_draw.obj : error LNK2001: unresolved external symbol __imp_glViewport
+     1>state_replaymanager.obj : error LNK2001: unresolved external symbol __imp_glViewport
+     1>F1SpiritApp.obj : error LNK2019: unresolved external symbol gluPerspective referenced in function "public: void __cdecl F1SpiritApp::draw(void)" (?draw@F1SpiritApp@@QEAAXXZ)
+     1>F1SpiritApp.obj : error LNK2019: unresolved external symbol gluLookAt referenced in function "public: void __cdecl F1SpiritApp::draw(void)" (?draw@F1SpiritApp@@QEAAXXZ)
+     1>F1SpiritGame.obj : error LNK2019: unresolved external symbol __imp_glGetFloatv referenced in function "public: void __cdecl F1SpiritGame::draw(bool)" (?draw@F1SpiritGame@@QEAAX_N@Z)
+     1>F1SpiritTrackViewer.obj : error LNK2001: unresolved external symbol __imp_glGetFloatv
+     1>RotatedGLTile.obj : error LNK2001: unresolved external symbol __imp_glRotatef
+     1>weather.obj : error LNK2001: unresolved external symbol __imp_glRotatef
+     1>F1SpiritGame.obj : error LNK2001: unresolved external symbol __imp_glRotatef
+     1>F1SpiritTrackViewer.obj : error LNK2001: unresolved external symbol __imp_glRotatef
+     1>GLtile-f1.obj : error LNK2001: unresolved external symbol __imp_glRotatef
+     1>GLTile.obj : error LNK2001: unresolved external symbol __imp_glRotatef
+     1>F1SpiritGame.obj : error LNK2019: unresolved external symbol __imp_glScissor referenced in function "public: void __cdecl F1SpiritGame::draw(bool)" (?draw@F1SpiritGame@@QEAAX_N@Z)
+     1>state_menu_draw.obj : error LNK2001: unresolved external symbol __imp_glScissor
+     1>state_replaymanager.obj : error LNK2001: unresolved external symbol __imp_glScissor
+     1>RoadPiece.obj : error LNK2001: unresolved external symbol __imp_glTranslatef
+     1>RotatedGLTile.obj : error LNK2001: unresolved external symbol __imp_glTranslatef
+     1>state_konami.obj : error LNK2001: unresolved external symbol __imp_glTranslatef
+     1>weather.obj : error LNK2001: unresolved external symbol __imp_glTranslatef
+     1>F1SpiritGame.obj : error LNK2001: unresolved external symbol __imp_glTranslatef
+     1>F1SpiritTrackViewer.obj : error LNK2001: unresolved external symbol __imp_glTranslatef
+     1>GLtile-f1.obj : error LNK2001: unresolved external symbol __imp_glTranslatef
+     1>GLTile.obj : error LNK2001: unresolved external symbol __imp_glTranslatef
+     1>track.obj : error LNK2001: unresolved external symbol __imp_glBindTexture
+     1>state_hiscore.obj : error LNK2001: unresolved external symbol __imp_glBindTexture
+     1>state_race_result.obj : error LNK2001: unresolved external symbol __imp_glBindTexture
+     1>state_replaymanager.obj : error LNK2001: unresolved external symbol __imp_glBindTexture
+     1>state_title.obj : error LNK2001: unresolved external symbol __imp_glBindTexture
+     1>GLtile-f1.obj : error LNK2001: unresolved external symbol __imp_glBindTexture
+     1>GLTile.obj : error LNK2001: unresolved external symbol __imp_glBindTexture
+     1>RoadPiece.obj : error LNK2001: unresolved external symbol __imp_glBindTexture
+     1>SDL_glutaux.obj : error LNK2001: unresolved external symbol __imp_glBindTexture
+     1>state_race_result.obj : error LNK2001: unresolved external symbol __imp_glTexCoord2f
+     1>state_replaymanager.obj : error LNK2001: unresolved external symbol __imp_glTexCoord2f
+     1>state_title.obj : error LNK2001: unresolved external symbol __imp_glTexCoord2f
+     1>track.obj : error LNK2001: unresolved external symbol __imp_glTexCoord2f
+     1>GLtile-f1.obj : error LNK2001: unresolved external symbol __imp_glTexCoord2f
+     1>GLTile.obj : error LNK2001: unresolved external symbol __imp_glTexCoord2f
+     1>RoadPiece.obj : error LNK2001: unresolved external symbol __imp_glTexCoord2f
+     1>state_hiscore.obj : error LNK2001: unresolved external symbol __imp_glTexCoord2f
+     1>GLTile.obj : error LNK2019: unresolved external symbol __imp_glDeleteTextures referenced in function "public: void __cdecl GLTile::free(void)" (?free@GLTile@@QEAAXXZ)
+     1>track.obj : error LNK2001: unresolved external symbol __imp_glDeleteTextures
+     1>GLTile.obj : error LNK2019: unresolved external symbol __imp_glReadPixels referenced in function "public: __cdecl GLTile::GLTile(int,int,int,int)" (??0GLTile@@QEAA@HHHH@Z)
+     1>main.obj : error LNK2019: unresolved external symbol __imp_glGetIntegerv referenced in function "struct SDL_Surface * __cdecl initialization(int)" (?initialization@@YAPEAUSDL_Surface@@H@Z)
+     1>state_title.obj : error LNK2001: unresolved external symbol __imp_glColor3f
+     1>SDL_glutaux.obj : error LNK2001: unresolved external symbol __imp_glColor3f
+     1>state_hiscore.obj : error LNK2001: unresolved external symbol __imp_glColor3f
+     1>state_race_result.obj : error LNK2001: unresolved external symbol __imp_glColor3f
+     1>state_replaymanager.obj : error LNK2001: unresolved external symbol __imp_glColor3f
+     1>SDL_glutaux.obj : error LNK2019: unresolved external symbol __imp_glCopyTexSubImage2D referenced in function "unsigned int __cdecl createTextureFromScreen(int,int,int,int,float *,float *)" (?createTextureFromScreen@@YAIHHHHPEAM0@Z)
+     1>SDL_glutaux.obj : error LNK2019: unresolved external symbol __imp_glGenTextures referenced in function "unsigned int __cdecl createTexture(struct SDL_Surface *,float *,float *)" (?createTexture@@YAIPEAUSDL_Surface@@PEAM1@Z)
+     1>SDL_glutaux.obj : error LNK2019: unresolved external symbol __imp_glPixelStorei referenced in function "unsigned int __cdecl createTexture(struct SDL_Surface *,float *,float *)" (?createTexture@@YAIPEAUSDL_Surface@@PEAM1@Z)
+     1>SDL_glutaux.obj : error LNK2019: unresolved external symbol __imp_glTexImage2D referenced in function "unsigned int __cdecl createTexture(struct SDL_Surface *,float *,float *)" (?createTexture@@YAIPEAUSDL_Surface@@PEAM1@Z)
+     1>SDL_glutaux.obj : error LNK2019: unresolved external symbol __imp_glTexParameteri referenced in function "unsigned int __cdecl createTexture(struct SDL_Surface *,float *,float *)" (?createTexture@@YAIPEAUSDL_Surface@@PEAM1@Z)
+     1>weather.obj : error LNK2001: unresolved external symbol __imp_glClear
+     1>state_race_result.obj : error LNK2001: unresolved external symbol __imp_glClear
+     1>state_replaymanager.obj : error LNK2001: unresolved external symbol __imp_glClear
+     1>state_title.obj : error LNK2001: unresolved external symbol __imp_glClear
+     1>state_trackload.obj : error LNK2001: unresolved external symbol __imp_glClear
+     1>state_hiscore.obj : error LNK2001: unresolved external symbol __imp_glClear
+     1>state_konami.obj : error LNK2001: unresolved external symbol __imp_glClear
+     1>state_menu_draw.obj : error LNK2001: unresolved external symbol __imp_glClear
+     1>state_race.obj : error LNK2001: unresolved external symbol __imp_glClear
+     1>state_disclaimer.obj : error LNK2001: unresolved external symbol __imp_glClear
+     1>state_endsequence.obj : error LNK2001: unresolved external symbol __imp_glClear
+     1>state_gameoptions.obj : error LNK2001: unresolved external symbol __imp_glClear
+     1>state_gamestart.obj : error LNK2001: unresolved external symbol __imp_glClear
+     1>weather.obj : error LNK2019: unresolved external symbol __imp_glClearStencil referenced in function "public: void __cdecl F1SpiritGame::draw_nightmode_stencil(class PlayerCCar *)" (?draw_nightmode_stencil@F1SpiritGame@@QEAAXPEAVPlayerCCar@@@Z)
+     1>weather.obj : error LNK2019: unresolved external symbol __imp_glPopAttrib referenced in function "public: void __cdecl F1SpiritGame::draw_nightmode_stencil(class PlayerCCar *)" (?draw_nightmode_stencil@F1SpiritGame@@QEAAXPEAVPlayerCCar@@@Z)
+     1>weather.obj : error LNK2019: unresolved external symbol __imp_glPushAttrib referenced in function "public: void __cdecl F1SpiritGame::draw_nightmode_stencil(class PlayerCCar *)" (?draw_nightmode_stencil@F1SpiritGame@@QEAAXPEAVPlayerCCar@@@Z)
+     1>weather.obj : error LNK2019: unresolved external symbol __imp_glStencilFunc referenced in function "public: void __cdecl F1SpiritGame::draw_nightmode_stencil(class PlayerCCar *)" (?draw_nightmode_stencil@F1SpiritGame@@QEAAXPEAVPlayerCCar@@@Z)
+     1>weather.obj : error LNK2019: unresolved external symbol __imp_glStencilOp referenced in function "public: void __cdecl F1SpiritGame::draw_nightmode_stencil(class PlayerCCar *)" (?draw_nightmode_stencil@F1SpiritGame@@QEAAXPEAVPlayerCCar@@@Z)
+     1>libs\glut.lib : warning LNK4272: library machine type 'X86' conflicts with target machine type 'x64'
+     1>libs\glut32.lib : warning LNK4272: library machine type 'X86' conflicts with target machine type 'x64'
+     1>D:\Users\Tom\Documents\GitHub\GameAI\f1spirit-CS387\f1spirit-CS387\x64\Debug\f1spirit-steering.exe : fatal error LNK1120: 42 unresolved externals
+     1>Done Building Project "D:\Users\Tom\Documents\GitHub\GameAI\f1spirit-CS387\f1spirit-CS387\f1spirit-steering.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:30.04

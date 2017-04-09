@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{51449E26-9A61-4FF5-B298-FC29BC92FD5A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>include;sources;sources\CS480;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalUsingDirectories>
+      </AdditionalUsingDirectories>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>glu32.lib;openGL32.lib;SDLmain.lib;SDL.lib;SDL_net.lib;SDL_mixer.lib;SDL_image.lib;glut.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>D:\Users\Tom\Documents\GitHub\GameAI\f1spirit-CS387\f1spirit-CS387\libs</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>include</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="sources\2DCMC.cpp" />
+    <ClCompile Include="sources\CS480\AIDebug.cpp" />
+    <ClCompile Include="sources\auxiliar.cpp" />
+    <ClCompile Include="sources\CarEngineSound.cpp" />
+    <ClCompile Include="sources\CCar.cpp" />
+    <ClCompile Include="sources\CPlayer.cpp" />
+    <ClCompile Include="sources\CS480\PlayerCCarAI.cpp" />
+    <ClCompile Include="sources\debug.cpp" />
+    <ClCompile Include="sources\EnemyCCar.cpp" />
+    <ClCompile Include="sources\EnemyCCarAI.cpp" />
+    <ClCompile Include="sources\F1SComputer.cpp" />
+    <ClCompile Include="sources\F1Spirit-auxiliar.cpp" />
+    <ClCompile Include="sources\F1SpiritApp.cpp" />
+    <ClCompile Include="sources\F1SpiritGame.cpp" />
+    <ClCompile Include="sources\F1SpiritTrackViewer.cpp" />
+    <ClCompile Include="sources\filehandling.cpp" />
+    <ClCompile Include="sources\GameParameters.cpp" />
+    <ClCompile Include="sources\geometrics.cpp" />
+    <ClCompile Include="sources\GLtile-f1.cpp" />
+    <ClCompile Include="sources\GLTile.cpp" />
+    <ClCompile Include="sources\keyboardstate.cpp" />
+    <ClCompile Include="sources\main.cpp" />
+    <ClCompile Include="sources\PlacedGLTile.cpp" />
+    <ClCompile Include="sources\PlayerCCar.cpp" />
+    <ClCompile Include="sources\PlayerCCarAI.cpp" />
+    <ClCompile Include="sources\RacingCCar.cpp" />
+    <ClCompile Include="sources\ranrotb.cpp" />
+    <ClCompile Include="sources\ReplayInfo.cpp" />
+    <ClCompile Include="sources\RoadPiece.cpp" />
+    <ClCompile Include="sources\RotatedGLTile.cpp" />
+    <ClCompile Include="sources\SDL_glutaux.cpp" />
+    <ClCompile Include="sources\sound.cpp" />
+    <ClCompile Include="sources\state_disclaimer.cpp" />
+    <ClCompile Include="sources\state_endsequence.cpp" />
+    <ClCompile Include="sources\state_gameoptions.cpp" />
+    <ClCompile Include="sources\state_gamestart.cpp" />
+    <ClCompile Include="sources\state_hiscore.cpp" />
+    <ClCompile Include="sources\state_konami.cpp" />
+    <ClCompile Include="sources\state_menu.cpp" />
+    <ClCompile Include="sources\state_menu_create_menu.cpp" />
+    <ClCompile Include="sources\state_menu_draw.cpp" />
+    <ClCompile Include="sources\state_race.cpp" />
+    <ClCompile Include="sources\state_race_result.cpp" />
+    <ClCompile Include="sources\state_replaymanager.cpp" />
+    <ClCompile Include="sources\state_title.cpp" />
+    <ClCompile Include="sources\state_trackload.cpp" />
+    <ClCompile Include="sources\track.cpp" />
+    <ClCompile Include="sources\Vector.cpp" />
+    <ClCompile Include="sources\weather.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\begin_code.h" />
+    <ClInclude Include="include\close_code.h" />
+    <ClInclude Include="include\glut.h" />
+    <ClInclude Include="include\SDL.h" />
+    <ClInclude Include="include\SDL_active.h" />
+    <ClInclude Include="include\SDL_audio.h" />
+    <ClInclude Include="include\SDL_byteorder.h" />
+    <ClInclude Include="include\SDL_cdrom.h" />
+    <ClInclude Include="include\SDL_config.h" />
+    <ClInclude Include="include\SDL_config_dreamcast.h" />
+    <ClInclude Include="include\SDL_config_macos.h" />
+    <ClInclude Include="include\SDL_config_macosx.h" />
+    <ClInclude Include="include\SDL_config_minimal.h" />
+    <ClInclude Include="include\SDL_config_nds.h" />
+    <ClInclude Include="include\SDL_config_os2.h" />
+    <ClInclude Include="include\SDL_config_symbian.h" />
+    <ClInclude Include="include\SDL_config_win32.h" />
+    <ClInclude Include="include\SDL_copying.h" />
+    <ClInclude Include="include\SDL_cpuinfo.h" />
+    <ClInclude Include="include\SDL_endian.h" />
+    <ClInclude Include="include\SDL_error.h" />
+    <ClInclude Include="include\SDL_events.h" />
+    <ClInclude Include="include\SDL_getenv.h" />
+    <ClInclude Include="include\SDL_image.h" />
+    <ClInclude Include="include\SDL_joystick.h" />
+    <ClInclude Include="include\SDL_keyboard.h" />
+    <ClInclude Include="include\SDL_keysym.h" />
+    <ClInclude Include="include\SDL_loadso.h" />
+    <ClInclude Include="include\SDL_main.h" />
+    <ClInclude Include="include\SDL_mixer.h" />
+    <ClInclude Include="include\SDL_mouse.h" />
+    <ClInclude Include="include\SDL_mutex.h" />
+    <ClInclude Include="include\SDL_name.h" />
+    <ClInclude Include="include\SDL_net.h" />
+    <ClInclude Include="include\SDL_opengl.h" />
+    <ClInclude Include="include\SDL_platform.h" />
+    <ClInclude Include="include\SDL_quit.h" />
+    <ClInclude Include="include\SDL_rwops.h" />
+    <ClInclude Include="include\SDL_stdinc.h" />
+    <ClInclude Include="include\SDL_syswm.h" />
+    <ClInclude Include="include\SDL_thread.h" />
+    <ClInclude Include="include\SDL_timer.h" />
+    <ClInclude Include="include\SDL_types.h" />
+    <ClInclude Include="include\SDL_version.h" />
+    <ClInclude Include="include\SDL_video.h" />
+    <ClInclude Include="sources\2DCMC.h" />
+    <ClInclude Include="sources\CS480\AIDebug.h" />
+    <ClInclude Include="sources\auxiliar.h" />
+    <ClInclude Include="sources\CCar.h" />
+    <ClInclude Include="sources\CPlayer.h" />
+    <ClInclude Include="sources\debug.h" />
+    <ClInclude Include="sources\EnemyCCar.h" />
+    <ClInclude Include="sources\F1Spirit-auxiliar.h" />
+    <ClInclude Include="sources\F1Spirit.h" />
+    <ClInclude Include="sources\F1SpiritApp.h" />
+    <ClInclude Include="sources\F1SpiritGame.h" />
+    <ClInclude Include="sources\F1SpiritTrackViewer.h" />
+    <ClInclude Include="sources\filehandling.h" />
+    <ClInclude Include="sources\GameParameters.h" />
+    <ClInclude Include="sources\geometrics.h" />
+    <ClInclude Include="sources\GLTile.h" />
+    <ClInclude Include="sources\icon32.h" />
+    <ClInclude Include="sources\keyboardstate.h" />
+    <ClInclude Include="sources\List.h" />
+    <ClInclude Include="sources\PlacedGLTile.h" />
+    <ClInclude Include="sources\PlayerCCar.h" />
+    <ClInclude Include="sources\RacingCCar.h" />
+    <ClInclude Include="sources\randomc.h" />
+    <ClInclude Include="sources\ReplayInfo.h" />
+    <ClInclude Include="sources\RoadPiece.h" />
+    <ClInclude Include="sources\RotatedGLTile.h" />
+    <ClInclude Include="sources\SDL_glutaux.h" />
+    <ClInclude Include="sources\sound.h" />
+    <ClInclude Include="sources\track.h" />
+    <ClInclude Include="sources\Vector.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".DS_Store" />
+    <None Include="glut.dll" />
+    <None Include="libFLAC-8.dll" />
+    <None Include="libjpeg-8.dll" />
+    <None Include="libjpeg-9.dll" />
+    <None Include="libmikmod-2.dll" />
+    <None Include="libmodplug-1.dll" />
+    <None Include="libogg-0.dll" />
+    <None Include="libpng15-15.dll" />
+    <None Include="libpng16-16.dll" />
+    <None Include="libtiff-5.dll" />
+    <None Include="libvorbis-0.dll" />
+    <None Include="libvorbisfile-3.dll" />
+    <None Include="libwebp-2.dll" />
+    <None Include="libwebp-4.dll" />
+    <None Include="SDL.dll" />
+    <None Include="SDL_image.dll" />
+    <None Include="SDL_mixer.dll" />
+    <None Include="SDL_net.dll" />
+    <None Include="smpeg.dll" />
+    <None Include="smpeg2.dll" />
+    <None Include="zlib1.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="libs\glut.lib" />
+    <Library Include="libs\glut32.lib" />
+    <Library Include="libs\SDL.lib" />
+    <Library Include="libs\SDLmain.lib" />
+    <Library Include="libs\SDL_image.lib" />
+    <Library Include="libs\SDL_mixer.lib" />
+    <Library Include="libs\SDL_net.lib" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
