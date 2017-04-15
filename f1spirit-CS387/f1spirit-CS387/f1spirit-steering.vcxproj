@@ -83,7 +83,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <AdditionalDependencies>glu32.lib;openGL32.lib;SDLmain.lib;SDL.lib;SDL_net.lib;SDL_mixer.lib;SDL_image.lib;glut.lib;</AdditionalDependencies>
-      <AdditionalLibraryDirectories>D:\Users\Tom\Documents\GitHub\GameAI\f1spirit-CS387\f1spirit-CS387\libs</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>libs</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -236,26 +236,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include=".DS_Store" />
-    <None Include="glut.dll" />
     <None Include="libFLAC-8.dll" />
     <None Include="libjpeg-8.dll" />
-    <None Include="libjpeg-9.dll" />
     <None Include="libmikmod-2.dll" />
-    <None Include="libmodplug-1.dll" />
     <None Include="libogg-0.dll" />
     <None Include="libpng15-15.dll" />
-    <None Include="libpng16-16.dll" />
     <None Include="libtiff-5.dll" />
     <None Include="libvorbis-0.dll" />
     <None Include="libvorbisfile-3.dll" />
     <None Include="libwebp-2.dll" />
-    <None Include="libwebp-4.dll" />
     <None Include="SDL.dll" />
     <None Include="SDL_image.dll" />
     <None Include="SDL_mixer.dll" />
     <None Include="SDL_net.dll" />
     <None Include="smpeg.dll" />
-    <None Include="smpeg2.dll" />
     <None Include="zlib1.dll" />
   </ItemGroup>
   <ItemGroup>

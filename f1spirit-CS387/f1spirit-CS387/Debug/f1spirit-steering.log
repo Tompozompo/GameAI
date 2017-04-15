@@ -1,29 +1,15 @@
-﻿Build started 4/6/2017 12:45:14 PM.
-     1>Project "D:\Users\Tom\Documents\GitHub\GameAI\f1spirit-CS387\f1spirit-CS387\f1spirit-steering.vcxproj" on node 2 (Build target(s)).
+﻿Build started 4/15/2017 6:40:55 PM.
+     1>Project "C:\Users\Tom\Documents\Github\GameAI\f1spirit-CS387\f1spirit-CS387\f1spirit-steering.vcxproj" on node 2 (Build target(s)).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of PlayerCCarAI.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are sources\CS480\PlayerCCarAI.cpp, sources\PlayerCCarAI.cpp.
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Iinclude /Isources /Isources\CS480 /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt sources\F1SpiritApp.cpp
-         F1SpiritApp.cpp
-     1>sources\F1SpiritApp.cpp(475): warning C4150: deletion of pointer to incomplete type 'F1Shttp'; no destructor called
-         d:\users\tom\documents\github\gameai\f1spirit-cs387\f1spirit-cs387\sources\F1SpiritApp.h(239): note: see declaration of 'F1Shttp'
-     1>sources\F1SpiritApp.cpp(741): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-         C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\stdio.h(1769): note: see declaration of 'sprintf'
-     1>sources\F1SpiritApp.cpp(778): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-         C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\string.h(119): note: see declaration of 'strcpy'
-     1>sources\F1SpiritApp.cpp(781): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-         C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\string.h(119): note: see declaration of 'strcpy'
-     1>sources\F1SpiritApp.cpp(957): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-         C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\string.h(119): note: see declaration of 'strcpy'
-     1>sources\F1SpiritApp.cpp(975): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-         C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\string.h(119): note: see declaration of 'strcpy'
-     1>sources\F1SpiritApp.cpp(992): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-         C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\string.h(119): note: see declaration of 'strcpy'
-     1>sources\F1SpiritApp.cpp(1019): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-         C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\stdio.h(1769): note: see declaration of 'sprintf'
-     1>sources\F1SpiritApp.cpp(1063): warning C4996: 'fscanf': This function or variable may be unsafe. Consider using fscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-         C:\Program Files (x86)\Windows Kits\10\Include\10.0.10150.0\ucrt\stdio.h(1193): note: see declaration of 'fscanf'
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /Iinclude /Isources /Isources\CS480 /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /Gm /EHsc /RTC1 /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt sources\CS480\PlayerCCarAI.cpp
+         PlayerCCarAI.cpp
+     1>sources\CS480\PlayerCCarAI.cpp(72): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+     1>sources\CS480\PlayerCCarAI.cpp(84): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+     1>sources\CS480\PlayerCCarAI.cpp(85): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+     1>sources\CS480\PlayerCCarAI.cpp(129): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
        Link:
-         D:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Users\Tom\Documents\GitHub\GameAI\f1spirit-CS387\f1spirit-CS387\Debug\f1spirit-steering.exe" /INCREMENTAL /NOLOGO /LIBPATH:"D:\Users\Tom\Documents\GitHub\GameAI\f1spirit-CS387\f1spirit-CS387\libs" glu32.lib openGL32.lib SDLmain.lib SDL.lib SDL_net.lib SDL_mixer.lib SDL_image.lib glut.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"D:\Users\Tom\Documents\GitHub\GameAI\f1spirit-CS387\f1spirit-CS387\Debug\f1spirit-steering.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Users\Tom\Documents\GitHub\GameAI\f1spirit-CS387\f1spirit-CS387\Debug\f1spirit-steering.lib" /MACHINE:X86 Debug\2DCMC.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Tom\Documents\Github\GameAI\f1spirit-CS387\f1spirit-CS387\Debug\f1spirit-steering.exe" /INCREMENTAL /NOLOGO /LIBPATH:libs glu32.lib openGL32.lib SDLmain.lib SDL.lib SDL_net.lib SDL_mixer.lib SDL_image.lib glut.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Tom\Documents\Github\GameAI\f1spirit-CS387\f1spirit-CS387\Debug\f1spirit-steering.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Tom\Documents\Github\GameAI\f1spirit-CS387\f1spirit-CS387\Debug\f1spirit-steering.lib" /MACHINE:X86 Debug\2DCMC.obj
          Debug\AIDebug.obj
          Debug\auxiliar.obj
          Debug\CarEngineSound.obj
@@ -79,9 +65,10 @@
          libs\SDL_image.lib
          libs\SDL_mixer.lib
          libs\SDL_net.lib
-         f1spirit-steering.vcxproj -> D:\Users\Tom\Documents\GitHub\GameAI\f1spirit-CS387\f1spirit-CS387\Debug\f1spirit-steering.exe
-     1>Done Building Project "D:\Users\Tom\Documents\GitHub\GameAI\f1spirit-CS387\f1spirit-CS387\f1spirit-steering.vcxproj" (Build target(s)).
+     1>Debug\PlayerCCarAI.obj : warning LNK4042: object specified more than once; extras ignored
+         f1spirit-steering.vcxproj -> C:\Users\Tom\Documents\Github\GameAI\f1spirit-CS387\f1spirit-CS387\Debug\f1spirit-steering.exe
+     1>Done Building Project "C:\Users\Tom\Documents\Github\GameAI\f1spirit-CS387\f1spirit-CS387\f1spirit-steering.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.94
+Time Elapsed 00:00:01.24
