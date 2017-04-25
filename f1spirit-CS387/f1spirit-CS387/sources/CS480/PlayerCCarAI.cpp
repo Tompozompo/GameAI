@@ -98,24 +98,32 @@ void seek(CCar* car, float Ex, float Ey, float* Ax, float* Ay)
 
 void flee(CCar* car, float Ex, float Ey, float* Ax, float* Ay)
 {
-	float Dx = car->get_x() - Ex;
-	float Dy = car->get_y() - Ey;
+	float Dx = Ex - car->get_x();
+	float Dy = Ey - car->get_y();
 	float Dmag = get_magnitude(Dx, Dy);
 	*Ax = -Dx / Dmag;
 	*Ay = -Dy / Dmag;
 }
 
 
-void angular_acceleration(CCar* car, float Ax, float Ay, int* turn_action)
+void angular_acceleration(CCar* car, float Ax, float Ay, float* angle, bool *accelerate_action, bool *brake_action, int *turn_action)
 {
-	float rightx = car->get_speed_y();
-	float righty = -car->get_speed_x();
-	float rightmag = get_magnitude(rightx, righty);
-	float Amag = get_magnitude(Ax, Ay);
+	float vx = car->get_speed_x();
+	float vy = car->get_speed_y();
+	float rightx = vy;
+	float righty = -vx;
+	float v = get_magnitude(vx, vy);
+	float right = get_magnitude(rightx, righty);
+	float A = get_magnitude(Ax, Ay);
+	float proj = dot(rightx, righty, Ax, Ay);
 
-	float dotp = dot(rightx, righty, Ax, Ay);
-    if (dotp>2) *turn_action = 1;
-    if (dotp<-2) *turn_action = -1;
+	float angle_cos = dot(Ax, Ay, vx, vy) / (v*A);
+	*angle = acos(angle_cos);
+	
+	*accelerate_action = true;
+	*brake_action = false;
+	if (*angle>0.1 && proj>0.5) *turn_action = 1;
+	if (*angle>0.1 && proj<-0.5) *turn_action = -1;
 }
 
 
@@ -128,10 +136,6 @@ void PlayerCCar::PlayerAICS480(bool *accelerate_action, bool *brake_action, int 
     float vy = car->get_speed_y();
     float v = sqrt(vx*vx+vy*vy);
     
-    // Draw a green line in the direction of movement:
-    addAIDebugline(car->get_x(), car->get_y(), car->get_x() + vx*64/v, car->get_y()+ vy*64/v,0,255,0,255);
-    
-
     // The road is made out of a collection of pieces, get the piece over which the car is on right now:
     CRoadPiece *rp = road_position.GetObj();
     // Get the road piece following the current road piece:
@@ -149,71 +153,115 @@ void PlayerCCar::PlayerAICS480(bool *accelerate_action, bool *brake_action, int 
     float pathx = 0, pathy = 0, pathz = 0, patha = 0, pathw = 0, distance = 0;
     float next_pathx = 0, next_pathy = 0, next_pathz = 0, next_patha = 0, next_pathw = 0, next_distance = 0;
     rp->get_path_position(car->get_x(),car->get_y(),&pathx,&pathy,&pathz,&patha,&pathw,&distance);
-
-    // Compute a position in the road that is 128 pixels ahead of the current position:
+	
+	int seek_ahead = 128;
+    // Compute a position in the road that is seek_ahead pixels ahead of the current position:
     {
         float next_pathx2 = 0, next_pathy2 = 0, next_pathz2 = 0, next_patha2 = 0, next_pathw2 = 0, next_distance2 = 0;
-        float fwx = float(pathx + 128 * cos((patha * M_PI) / 180.0F));
-        float fwy = float(pathy + 128 * sin((patha * M_PI) / 180.0F));
+        float fwx = float(pathx + seek_ahead * cos((patha * M_PI) / 180.0F));
+        float fwy = float(pathy + seek_ahead * sin((patha * M_PI) / 180.0F));
         rp->get_path_position(fwx, fwy, &next_pathx, &next_pathy, &next_pathz, &next_patha, &next_pathw, &next_distance);
         next_rp->get_path_position(fwx, fwy, &next_pathx2, &next_pathy2, &next_pathz2, &next_patha2, &next_pathw2, &next_distance2);
         if (next_distance2<next_distance) {
+			rp = next_rp;
             next_pathx = next_pathx2;
             next_pathy = next_pathy2;
+			next_pathw = next_pathw2;
         } 
     }
 
     // Draw a white line from the car to the closest position of the road:
     addAIDebugline(car->get_x(), car->get_y(), pathx,pathy,255,255,255,255);
 
-    // Draw a blue line from the car to the position in the road that is 128 pixels ahead:
-    addAIDebugline(car->get_x(), car->get_y(), next_pathx,next_pathy,0,0,255,255);
-
-	float a_x, a_y;
-	seek(car, next_pathx, next_pathy, &a_x, &a_y);
-	angular_acceleration(car, a_x, a_y, turn_action);
-
-	// Draw a green line
-	addAIDebugline(car->get_x(), car->get_y(), car->get_x() + a_x*54, car->get_y() + a_y*64, 255, 255, 0, 255);
+	//the default seek target, which is the area 128 pixels up the road with the same offset from the center
+	float diff_x = pathx - car->get_x();
+	float diff_y = pathy - car->get_y();
+	float seek_target_x = next_pathx - diff_x;
+	float seek_target_y = next_pathy - diff_y;
     
-    if (v>0) {
-		float theta = M_PI / 4;
-		float e = theta / 8;
-		float maxlenx = car->get_x() + (vx / v) * 64;
-		float maxleny = car->get_y() + (vy / v) * 64;
-		float bound1x, bound1y, bound2x, bound2y;
-		rotate(maxlenx, maxleny, car->get_x(), car->get_y(), theta, &bound1x, &bound1y);
-		rotate(maxlenx, maxleny, car->get_x(), car->get_y(), -theta, &bound2x, &bound2y);
+	// Draw a blue line from the car to the position of the default seek target
+    addAIDebugline(car->get_x(), car->get_y(), seek_target_x, seek_target_y,0,0,255,255);
 
-		// Draw 2 red lines for the cone to check for collision
-		addAIDebugline(car->get_x(), car->get_y(), bound1x, bound1y, 255,0,0,255);
-		addAIDebugline(car->get_x(), car->get_y(), bound2x, bound2y, 255,0,0,255);
-		int count = 1;
-		for (int i = 8; i < 64; i += 8) {
+	float a_x, a_y, angle;
+	int look_ahead = 64;
+	if (v > 0) {
+		float delta = M_PI / 3;
+		float e = M_PI / 32;
+		bool safe_r = true, safe_l = true, open_l = true, open_r = true;
+		// Shoot 2 rays in front of the car to check for cars we need to pass
+		for (int i = 8; i < look_ahead; i += 8) {
 			float fwx = car->get_x() + (vx / v) * i;
 			float fwy = car->get_y() + (vy / v) * i;
-			for (float t = -theta; t <= theta; t += e) {
-				float fwxr, fwyr;
-				rotate(fwx, fwy, car->get_x(), car->get_y(), t, &fwxr, &fwyr);
-				//addAIDebugline(car->get_x(), car->get_y(), fwxr, fwyr, 255, 0, 0, 255);
-				RacingCCar* collided = 0;
-				collided = car->cars_collision(fwxr, fwyr, car->get_z(), cars, car_grid, car_grid_sx, car_grid_sy);
-				if (collided != 0) {
-					float a2_x, a2_y;
-					flee(car, collided->car->get_x(), collided->car->get_x(), &a2_x, &a2_y);
-					if(turn_action == 0)
-						angular_acceleration(car, a2_x, a2_y, turn_action);
-					a_x += a2_x;
-					a_y += a2_y;
-					count++;
-				}
+			float r1_rightx, r1_righty, r1_leftx, r1_lefty;
+			rotate(fwx, fwy, car->get_x(), car->get_y(), e, &r1_rightx, &r1_righty);
+			rotate(fwx, fwy, car->get_x(), car->get_y(), -e, &r1_leftx, &r1_lefty);
+			addAIDebugline(car->get_x(), car->get_y(), r1_rightx, r1_righty, 255, 0, 0, 255);
+			addAIDebugline(car->get_x(), car->get_y(), r1_leftx, r1_lefty, 255, 0, 0, 255);
+			RacingCCar *collided_car_r = 0, *collided_car_l = 0;
+			collided_car_r = car->cars_collision(r1_rightx, r1_righty, car->get_z(), cars, car_grid, car_grid_sx, car_grid_sy);
+			collided_car_l = car->cars_collision(r1_leftx, r1_lefty, car->get_z(), cars, car_grid, car_grid_sx, car_grid_sy);
+			if (collided_car_r != 0) {
+				safe_r = false;
+			}
+			else if(collided_car_l != 0) {
+				safe_l = false;
 			}
 		}
-    } 
-	if (get_magnitude(a_x, a_y) > 0)
+
+		// Shoot 2 short rays to the side of the car to make sure we don't turn off the road
+		float look_side = 16;
+		float fwx = car->get_x() + (vx / v) * look_side;
+		float fwy = car->get_y() + (vy / v) * look_side;
+		float r2x, r2y, r2offsetx, r2offsety, r3x, r3y, r3offsetx, r3offsety;
+		float junk1, junk2, junk3, junk4;
+		rotate(fwx, fwy, car->get_x(), car->get_y(), delta, &r2x, &r2y);
+		rotate(fwx, fwy, car->get_x(), car->get_y(), -delta, &r3x, &r3y);
+		rp->get_path_position(r2x, r2y, &r2offsetx, &r2offsety, &junk1, &junk2, &junk3, &junk4);
+		rp->get_path_position(r3x, r3y, &r3offsetx, &r3offsety, &junk1, &junk2, &junk3, &junk4);
+		addAIDebugline(car->get_x(), car->get_y(), r2x, r2y, 255, 0, 0, 255);
+		addAIDebugline(car->get_x(), car->get_y(), r3x, r3y, 255, 0, 0, 255);
+		if (get_magnitude(r2x -r2offsetx, r2y -r2offsety) > next_pathw / 2)
+			open_r = false;
+		if (get_magnitude(r3x -r3offsetx, r3y -r3offsety) > next_pathw / 2)
+			open_l = false;
+
+		// Use the 4 rays to rotate the default seek target to a better location
+		if (open_r && open_l) {
+			if (safe_r && !safe_l) {
+				float new_target_x, new_target_y;
+				rotate(seek_target_x, seek_target_y, car->get_x(), car->get_y(), delta, &new_target_x, &new_target_y);
+				seek_target_x = new_target_x;
+				seek_target_y = new_target_y;
+			}
+			else if (safe_l && !safe_r) {
+				float new_target_x, new_target_y;
+				rotate(seek_target_x, seek_target_y, car->get_x(), car->get_y(), -delta, &new_target_x, &new_target_y);
+				seek_target_x = new_target_x;
+				seek_target_y = new_target_y;
+			}
+		}
+		else if(open_r && !open_l) {
+			float new_target_x, new_target_y;
+			rotate(seek_target_x, seek_target_y, car->get_x(), car->get_y(), delta, &new_target_x, &new_target_y);
+			seek_target_x = new_target_x;
+			seek_target_y = new_target_y;
+		}
+		else if(!open_r && open_l) {
+			float new_target_x, new_target_y;
+			rotate(seek_target_x, seek_target_y, car->get_x(), car->get_y(), -delta, &new_target_x, &new_target_y);
+			seek_target_x = new_target_x;
+			seek_target_y = new_target_y;
+		}
+
+		// Draw a green line from the car to the position of the chosen seek target
+		addAIDebugline(car->get_x(), car->get_y(), seek_target_x, seek_target_y, 0, 255, 0, 255);
+		
+		// Use seek to go to the chosen place
+		seek(car, seek_target_x, seek_target_y, &a_x, &a_y);
+		angular_acceleration(car, a_x, a_y, &angle, accelerate_action, brake_action, turn_action);
+    } else {
 		*accelerate_action = true;
-	else
-		*brake_action = true;
+	}
 
     // If need be, shift gears:
     if (car->get_rpm() > car->get_engine()->max_rpm*0.9 && car->get_currentgear() < 3) *gear_action = 1;
