@@ -1,0 +1,18 @@
+node
+parent
+x
+y
+g
+h
+
+open and closed
+equals
+hash
+compare
+
+hashable
+compariable
+
+anylevelcolision
+s3 object (the game)
+
