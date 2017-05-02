@@ -1,4 +1,4 @@
-﻿Build started 4/20/2017 5:46:36 PM.
+﻿Build started 4/27/2017 5:54:03 PM.
      1>Project "C:\Users\Tom\Documents\Github\GameAI\f1spirit-CS387\f1spirit-CS387\f1spirit-steering.vcxproj" on node 2 (Build target(s)).
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(936,5): warning MSB8027: Two or more files with the name of PlayerCCarAI.cpp will produce outputs to the same location. This can lead to an incorrect build result.  The files involved are sources\CS480\PlayerCCarAI.cpp, sources\PlayerCCarAI.cpp.
      1>ClCompile:
@@ -71,4 +71,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.55
+Time Elapsed 00:00:01.49

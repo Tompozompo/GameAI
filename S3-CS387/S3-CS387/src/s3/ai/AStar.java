@@ -50,7 +50,7 @@ public class AStar {
 					if (i == 0 && j == 0) {
 						continue; //skip the center since that is n
 					}
-					if(game.isSpaceFree(0, (int)n.x + i, (int)n.y + j) && game.anyLevelCollision(entity) == null) {
+					if(game.isSpaceFree(1, (int)n.x + i, (int)n.y + j) && game.anyLevelCollision(entity) == null) {
 						Node m = new Node(n.x + i, n.y + j);
 						if (!open.contains(m) && !closed.contains(m)) {
 							m.parent = n;
