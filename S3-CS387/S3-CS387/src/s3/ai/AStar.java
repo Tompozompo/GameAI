@@ -4,6 +4,8 @@ package s3.ai;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+
+import gatech.mmpm.Entity;
 import s3.base.S3;
 import s3.entities.S3PhysicalEntity;
 import s3.util.Pair;
@@ -15,6 +17,7 @@ public class AStar {
 	private Node goal;
 	private S3 game;
 	private S3PhysicalEntity entity;
+	private List<Pair<Integer, Integer>> directions;
 
 	public static int pathDistance(double start_x, double start_y, double goal_x, double goal_y,
 			S3PhysicalEntity i_entity, S3 the_game) {
@@ -30,13 +33,17 @@ public class AStar {
 		goal = new Node(goal_x, goal_y);
 		game = the_game;
 		entity = i_entity;
+		directions = new ArrayList<Pair<Integer, Integer>>();
+		directions.add(new Pair<Integer, Integer>(-1,0));
+		directions.add(new Pair<Integer, Integer>(1,0));
+		directions.add(new Pair<Integer, Integer>(0,-1));
+		directions.add(new Pair<Integer, Integer>(0,1));
 	}
 
 	public List<Pair<Double, Double>> computePath() {
-		// ...
 		start.g = 0;
 		start.h = heuristic(start);
-		HashSet<Node> open = new HashSet<Node>();
+		ArrayList<Node> open = new ArrayList<Node>();
 		open.add(start);
 		HashSet<Node> closed = new HashSet<Node>();
 		while (!open.isEmpty()) {
@@ -45,19 +52,22 @@ public class AStar {
 				return getPath(n);
 			}
 			closed.add(n);
-			for (int i = -1; i <= 1; i++) {
-				for (int j = -1; j <= 1; j++) {
-					if (i == 0 && j == 0) {
-						continue; //skip the center since that is n
-					}
-					if(game.isSpaceFree(1, (int)n.x + i, (int)n.y + j) && game.anyLevelCollision(entity) == null) {
-						Node m = new Node(n.x + i, n.y + j);
-						if (!open.contains(m) && !closed.contains(m)) {
-							m.parent = n;
-							m.g = n.g + 1;
-							m.h = heuristic(m);
-							open.add(m);
-						}
+			for (Pair<Integer, Integer> d : directions) {
+				double x = n.x + d.m_a;
+				double y = n.y + d.m_b;
+				S3PhysicalEntity e = (S3PhysicalEntity) entity.clone();
+				e.setX((int)x);
+				e.setY((int)y);
+				if (x < 0 || y < 0 || x >= game.getMap().getWidth() || y >= game.getMap().getHeight()) {
+					continue;
+				}
+				if (game.anyLevelCollision(e) == null) {
+					Node m = new Node(x, y);
+					if (!open.contains(m) && !closed.contains(m)) {
+						m.parent = n;
+						m.g = n.g + 1;
+						m.h = heuristic(m);
+						open.add(m);
 					}
 				}
 			}
@@ -67,7 +77,7 @@ public class AStar {
 
 	private List<Pair<Double, Double>> getPath(Node n) {
 		List<Pair<Double, Double>> path = new ArrayList<Pair<Double, Double>>();
-		while(n != null) {
+		while(n != start) {
 			Pair<Double, Double> e = new Pair<Double, Double>(n.x, n.y);
 			path.add(0, e);
 			n = n.parent;
@@ -79,7 +89,7 @@ public class AStar {
 		return (n.x == goal.x && n.y == goal.y);
 	}
 
-	private Node removeLowestF(HashSet<Node> open) {
+	private Node removeLowestF(ArrayList<Node> open) {
 		Node min = null;
 		double min_f = 0;
 		for(Node n : open) {
