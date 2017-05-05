@@ -55,24 +55,29 @@ public class AStar {
 			for (Pair<Integer, Integer> d : directions) {
 				double x = n.x + d.m_a;
 				double y = n.y + d.m_b;
-				S3PhysicalEntity e = (S3PhysicalEntity) entity.clone();
-				e.setX((int)x);
-				e.setY((int)y);
-				if (x < 0 || y < 0 || x >= game.getMap().getWidth() || y >= game.getMap().getHeight()) {
-					continue;
-				}
-				if (game.anyLevelCollision(e) == null) {
-					Node m = new Node(x, y);
-					if (!open.contains(m) && !closed.contains(m)) {
-						m.parent = n;
-						m.g = n.g + 1;
-						m.h = heuristic(m);
-						open.add(m);
-					}
+				Node m = new Node(x, y);
+				if (isSpaceValid(x, y) && !open.contains(m) && !closed.contains(m)) {
+					m.parent = n;
+					m.g = n.g + 1;
+					m.h = heuristic(m);
+					open.add(m);
 				}
 			}
 		}
 		return null;
+	}
+
+	private boolean isSpaceValid(double x, double y) {
+		S3PhysicalEntity e = (S3PhysicalEntity) entity.clone();
+		e.setX((int) x);
+		e.setY((int) y);
+		if (x < 0 || y < 0 || x >= game.getMap().getWidth() || y >= game.getMap().getHeight()) {
+			return false;
+		}
+		else if (game.anyLevelCollision(e) != null) {
+			return false;
+		}
+		return true;
 	}
 
 	private List<Pair<Double, Double>> getPath(Node n) {

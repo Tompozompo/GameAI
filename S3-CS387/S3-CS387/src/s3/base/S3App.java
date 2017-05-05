@@ -70,7 +70,7 @@ public class S3App extends Canvas {
     private boolean gameRunning = true;
     public static final int SCREEN_X = 1024;
     public static final int SCREEN_Y = 720;
-    public static int REDRAWING_PERIOD = 8;
+    public static int REDRAWING_PERIOD = 5;
     public static int MAX_FRAMESKIP = 1000;
     public static final int m_trace_interval = 500;
     public static final int STATE_INIT = 0;
